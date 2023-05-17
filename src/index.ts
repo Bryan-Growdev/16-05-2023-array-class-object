@@ -113,6 +113,23 @@ const atividade6 = () => {
     new Aluno("aluno7", 20),
   ]
 
+  listaAlunos.map((aluno) => {
+    let nota = 0;
+
+    const respostas = responseGeneration();
+
+    for (let i = 0; i < 10; i++) {
+      if (respostas[i] === gabarito[i]) {
+        nota++;
+      }
+    }
+
+    aluno.addNota(nota);
+
+    return aluno;
+  });
+
+
   for (let aluno of listaAlunos) {
     let nota = 0;
     // for (let i = 0; i < listaAlunos.length; i++) {
@@ -135,33 +152,11 @@ const atividade6 = () => {
   const mediaDeNotas = newLista.reduce((acumulador, atual) => (acumulador + atual.getNota), 0) / newLista.length;
   const piorAluno = newLista[newLista.length - 1];
 
-
   console.table(newLista);
   console.log(`Melhor aluno ${melhorAluno.getNome} ${melhorAluno.getNota.toFixed(2)}`);
   console.log(`Pior aluno ${piorAluno.getNome} ${piorAluno.getNota.toFixed(2)}`);
   console.log(`Média de notas: ${mediaDeNotas}`);
-
   // console.timeEnd('Label');
-
-
-
-  // for (let aluno of listaAlunos) {
-  //   let nota = 0;
-  //   // for (let i = 0; i < listaAlunos.length; i++) {
-  //   //   const aluno = listaAlunos[i];
-
-  //   const respostas = responseGeneration();
-
-  //   console.log(respostas);
-  //   // for (let i = 0; i < 10; i ++) {
-  //   //   if (respostas[i] === gabarito[i]) {
-  //   //     nota++;
-  //   //   }
-  //   // }
-  // }
-
-
-
 }
 
 atividade6();
