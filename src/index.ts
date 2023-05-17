@@ -113,21 +113,21 @@ const atividade6 = () => {
     new Aluno("aluno7", 20),
   ]
 
-  listaAlunos.map((aluno) => {
-    let nota = 0;
+  // listaAlunos.map((aluno) => {
+  //   let nota = 0;
 
-    const respostas = responseGeneration();
+  //   const respostas = responseGeneration();
 
-    for (let i = 0; i < 10; i++) {
-      if (respostas[i] === gabarito[i]) {
-        nota++;
-      }
-    }
+  //   for (let i = 0; i < 10; i++) {
+  //     if (respostas[i] === gabarito[i]) {
+  //       nota++;
+  //     }
+  //   }
 
-    aluno.addNota(nota);
+  //   aluno.addNota(nota);
 
-    return aluno;
-  });
+  //   return aluno;
+  // });
 
 
   for (let aluno of listaAlunos) {
